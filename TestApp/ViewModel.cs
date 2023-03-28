@@ -31,8 +31,8 @@ namespace TestApp
             using var stream = new MemoryStream(Encoding.Default.GetBytes("Hello from the Community Toolkit!"));
             var fileSaverResult = await _fileSaver.SaveAsync("test.txt", stream, cancellationToken);
             fileSaverResult.EnsureSuccess();
-            await Toast.Make($"File is saved: {fileSaverResult.FilePath}").Show(cancellationToken);
-           await App.Current.MainPage.DisplayAlert("hello","ok", "canviewmodelcel");
+           await Toast.Make($"File is saved: {fileSaverResult.FilePath}").Show(cancellationToken);
+           await App.Current.MainPage.DisplayAlert("Save File","Success!", "OK");
         }
 
     }
